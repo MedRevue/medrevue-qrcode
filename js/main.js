@@ -5,7 +5,9 @@ let urlInput = document.getElementById("form-url");
 let canvas = document.getElementById("qr-code-canvas");
 
 btn.addEventListener("click", function (e) {
-  QRCode.toCanvas(canvas, 'sample text', function (error) {
+  canvas.classList.remove('d-none');
+  canvas.classList.add('d-block');
+  QRCode.toCanvas(canvas, urlInput.value, function (error) {
     if (error) console.error(error)
     console.log('success!');
   })
